@@ -35,15 +35,21 @@ const OSignup = () => {
 
   return (
     <div className='bg-white-500 sm:bg-[#F0F8FF] h-100'>
-      <OHeader />
+      <Link 
+      href={"/"}>
+      <Header />
+      </Link>
       <div className="rounded-lg bg-[#fff] md:w-[50vw] lg:w-[30vw]  mt-[-3vw] lg:mx-[35vw] px-10 py-10 justify-between items-center md:mx-[30vw] sm:mx-[20vw] justify-center">
         <div className="text-center">
-        <Image className='my-[-2rem] mx-[-2rem] sm:hidden'
-        src="/8.png"
+        <Link 
+      href={"/"}>
+      <Image className='my-[-2rem] mx-[-2rem] sm:hidden'
+        src="/Logo.png"
         alt="Logo"
         width={150}
         height={100}
       />
+      </Link>
           <h2 className="text-2xl font-bold">Sign Up</h2>
           <p className="text-lg mb-4">Get started today</p>
         </div>

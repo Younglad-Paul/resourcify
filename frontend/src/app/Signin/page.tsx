@@ -40,15 +40,21 @@ const Signin = () => {
 
   return (
     <div className='bg-white-500 sm:bg-[#F0F8FF] h-[100vh]'>
+       <Link 
+      href={"/"}>
       <Header />
+      </Link>
       <div className="rounded-lg bg-[#fff] md:w-[50vw] lg:w-[30vw]  mt-[-3vw] lg:mx-[35vw] px-10 py-10 justify-between items-center md:mx-[30vw] sm:mx-[20vw] justify-center">
         <div className="text-center">
-        <Image className='my-[-2rem] mx-[-2rem] sm:hidden'
+        <Link 
+      href={"/"}>
+      <Image className='my-[-2rem] mx-[-2rem] sm:hidden'
         src="/Logo.png"
         alt="Logo"
         width={150}
         height={100}
       />
+      </Link>
           <h2 className="text-[1.6rem] font-extrabold">Sign In</h2>
           <p className="text-[1rem] mb-8">Welcome back and good to have you once again</p>
         </div>

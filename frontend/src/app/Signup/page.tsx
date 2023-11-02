@@ -42,21 +42,21 @@ const Signup = () => {
 
   return (
     <div className='bg-white-500 sm:bg-[#F0F8FF] h-100'>
-      {/* <Image style={waterMark}
-        src="/resourcify.png"
-        alt="Logo"
-        width={2050}
-        height={150}
-      /> */}
+      <Link 
+      href={"/"}>
       <Header />
+      </Link>
       <div className="rounded-lg bg-[#fff] md:w-[50vw] lg:w-[30vw]  mt-[-3vw] lg:mx-[35vw] px-10 py-10 justify-between items-center md:mx-[30vw] sm:mx-[20vw] justify-center">
         <div className="text-center">
+        <Link 
+      href={"/"}>
       <Image className='my-[-2rem] mx-[-2rem] sm:hidden'
-        src="/8.png"
+        src="/Logo.png"
         alt="Logo"
         width={150}
         height={100}
       />
+      </Link>
           <h2 className="text-[1.6rem] font-extrabold">Sign Up</h2>
           <p className="text-[1rem] mb-8">Get started today</p>
         </div>
