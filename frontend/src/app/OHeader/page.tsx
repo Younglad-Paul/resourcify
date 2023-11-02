@@ -6,10 +6,10 @@ const OHeader = () => {
 
   return (
     <div className='hidden sm:flex'>
-      <Link 
-      href={"/"}>
-      <Image className='my-[-2rem] mx-[-2rem] sm:hidden'
-        src="/Logo.png"
+      <Link
+      href="/">
+      <Image
+        src="/8.png"
         alt="Logo"
         width={150}
         height={100}

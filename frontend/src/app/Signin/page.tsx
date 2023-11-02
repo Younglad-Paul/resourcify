@@ -40,10 +40,7 @@ const Signin = () => {
 
   return (
     <div className='bg-white-500 sm:bg-[#F0F8FF] h-[100vh]'>
-       <Link 
-      href={"/"}>
       <Header />
-      </Link>
       <div className="rounded-lg bg-[#fff] md:w-[50vw] lg:w-[30vw]  mt-[-3vw] lg:mx-[35vw] px-10 py-10 justify-between items-center md:mx-[30vw] sm:mx-[20vw] justify-center">
         <div className="text-center">
         <Link 
