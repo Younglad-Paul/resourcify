@@ -36,14 +36,14 @@ const SlideDownMenu = ({ isMenuOpen, closeMenu }: Props) => {
         </motion.ul>
         <motion.div variants={variantsChildren} className="flex gap-x-6  mt-4">
           <Link
-            href={"/sign up"}
+            href={"/Signup"}
             className="bg-primary  text-sm hover:shadow-2xl hover:-translate-y-1 transition-all text-white px-5 py-2 rounded-[5px]"
           >
             Sign up
           </Link>
 
           <Link
-            href={"/sign in"}
+            href={"/Signin"}
             className=" px-5 transition-colors text-sm text-primary py-2 rounded-[5px] hover:bg-[#2e68fb15]"
           >
             Sign in

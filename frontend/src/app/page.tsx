@@ -7,7 +7,8 @@ import React from "react";
 import Footer from "./components/footer/Footer";
 
 export default function Home() {
-   <React.Fragment>
+  return (
+    <React.Fragment>
       <Header />
       <main>
         <Hero />

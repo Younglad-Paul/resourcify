@@ -19,7 +19,11 @@ const Footer = () => {
         </svg>
       </div>
       <div className="">
-        <Image src={logo} alt={"logo"} className="md:w-auto mx-auto w-[9rem]" />
+       <Link href={"/"}>
+        <Image src={logo} 
+        alt={"logo"} 
+        className="md:w-auto mx-auto w-[9rem]" />
+       </Link>
         <ul className="flex gap-x-10 items-center md:mt-2 mt-1">
           <li className="text-white/60 text-base">
             <Link href={"#"}>Services</Link>

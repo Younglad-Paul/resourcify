@@ -94,14 +94,14 @@ const Header = () => {
 
           <div className="lg:flex hidden items-center gap-x-10">
             <Link
-              href={"/sign up"}
+              href={"#signUpToday"}
               className="bg-primary hover:shadow-2xl hover:-translate-y-1 transition-all text-white px-5 py-3 rounded-[5px]"
             >
               Sign up
             </Link>
 
             <Link
-              href={"/sign in"}
+              href={"#signUpToday"}
               className=" px-5 transition-colors text-primary py-3 rounded-[5px] hover:bg-[#2e68fb15]"
             >
               Sign in

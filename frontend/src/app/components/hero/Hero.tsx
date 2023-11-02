@@ -43,7 +43,7 @@ const Hero = () => {
             asChild
             className="hover:-translate-y-1 px-16 py-[1.7rem] transition-all shadow-black/70 hover:shadow-2xl"
           >
-            <Link href={"/"} className="capitalize  text-[1.2rem] ">
+            <Link href={"#signUpToday"} className="capitalize  text-[1.2rem] ">
               join us today
             </Link>
           </Button>
