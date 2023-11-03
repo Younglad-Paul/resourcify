@@ -56,6 +56,18 @@
     font-family: "Roboto", sans-serif;
   }
 
+  .form-group {
+    @apply flex flex-col gap-y-3;
+  }
+
+  .form-label {
+    @apply text-[#052126] sm:text-lg text-base;
+  }
+
+  .form-input {
+    @apply p-2.5 border text-[#052126] outline-0 rounded placeholder:sm:text-lg placeholder:text-sm;
+  }
+
   .custom-shape-divider-top-1698835758 {
     position: absolute;
     top: 0;

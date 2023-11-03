@@ -1,7 +1,7 @@
 "use client";
 
-import Container from "./ui/Container";
-import logo from "../../../public/images/logo.png";
+import Container from "../ui/Container";
+import logo from "../../../../public/images/logo.png";
 import Image from "next/image";
 import { navLinks } from "@/lib/Links";
 import { useEffect, useState } from "react";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useActiveSectionContext } from "@/context/activeSection";
 import { Menu, X } from "lucide-react";
-import SlideDownMenu from "./menu/SlideDownMenu";
+import SlideDownMenu from "../menu/SlideDownMenu";
 import { useClickOutside } from "@/lib/hooks";
 
 const Header = () => {
@@ -49,7 +49,7 @@ const Header = () => {
     >
       <Container>
         <div className="flex transition-all relative items-center justify-between">
-          <Link href={"home"} className="">
+          <Link href={"#home"} className="">
             <Image
               src={logo}
               alt={"logo"}

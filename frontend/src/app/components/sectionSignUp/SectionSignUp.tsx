@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const SectionSignUp = () => {
   return (
-    <section className="py-12 xl:px-28 px-8" id="signUpToday">
+    <section id="signUpToday" className="py-12 xl:px-28 px-8 scroll-mt-28">
       <Container>
         <h1 className="primary-heading text-center">sign up today</h1>
         <div className="xl:mt-20 mt-10  flex xl:items-start xl:flex-row flex-col gap-y-20  xl:justify-between items-center">
@@ -24,13 +24,13 @@ const SectionSignUp = () => {
 
             <div className="mt-9  flex  mobile-l:flex-row flex-col items-center  gap-x-[3rem] gap-y-4 ">
               <Button asChild className="bg-primary w-full py-6 px-12 ">
-                <Link href={"/OSignin"}>An Organization</Link>
+                <Link href={"/groupSignUp"}>An Organization</Link>
               </Button>
               <Button
                 asChild
                 className="bg-[#00205B] w-full py-6 px-12 hover:bg-[#00205bd4]"
               >
-                <Link href={"/Signin"}>An Individual</Link>
+                <Link href={"/Signup"}>An Individual</Link>
               </Button>
             </div>
           </div>
