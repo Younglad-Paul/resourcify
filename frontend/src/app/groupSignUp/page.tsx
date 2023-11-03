@@ -1,23 +1,22 @@
 "use client";
-import React, { useState } from "react";
 
+import React, { FormEvent, useState } from "react";
 import Link from "next/link";
 import Container from "../components/ui/Container";
 import FormHeader from "../components/headers/FormHeader";
-import { Eye, EyeOff, Mail } from "lucide-react";
+import { EyeOff, Mail, Eye } from "lucide-react";
 import { Button } from "../components/ui/button";
 
-const Signup = () => {
+const GroupSignUp = () => {
+  const [showWorkID, setShowWorkID] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     workID: "",
-    password: "",
   });
 
-  const [showWorkID, setShowWorkID] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  const toggleWorkIDVisibility = () => {
+    setShowWorkID(!showWorkID);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,15 +26,7 @@ const Signup = () => {
     });
   };
 
-  const toggleWorkIDVisibility = () => {
-    setShowWorkID(!showWorkID);
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
   };
@@ -46,8 +37,7 @@ const Signup = () => {
       className="sm:bg-[#2E68FB17] bg-white pb-7  min-h-screen"
     >
       <Container>
-        <FormHeader label="individual" />
-
+        <FormHeader label={"Organization"} />
         <section className="px-8 ">
           <form
             action=""
@@ -62,24 +52,24 @@ const Signup = () => {
 
             <div className="mt-8 space-y-5">
               <div className="form-group">
-                <label htmlFor="firstName" className="form-label">
-                  First Name
+                <label htmlFor="OrganizationName" className="form-label">
+                  Organization name
                 </label>
                 <input
                   type="name"
-                  id="firstName"
-                  placeholder=" First Name"
+                  id="OrganizationName"
+                  placeholder="enter your organization name"
                   className="form-input"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="lastName" className="form-label">
-                  Last Name
+                <label htmlFor="OrganizationType" className="form-label">
+                  Organization type
                 </label>
                 <input
-                  type="name"
-                  id="lastName"
-                  placeholder=" Last Name"
+                  type="text"
+                  id="OrganizationType"
+                  placeholder=" enteryour organization type"
                   className="form-input"
                 />
               </div>
@@ -90,36 +80,24 @@ const Signup = () => {
                 <input
                   type="name"
                   id="email"
-                  placeholder="enter your  email"
-                  className="form-input"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="WorkId" className="form-label">
-                  Work Id
-                </label>
-                <input
-                  type="name"
-                  id="WorkId"
-                  placeholder="enter work Id"
+                  placeholder="enter your organization email"
                   className="form-input"
                 />
               </div>
               <div className="form-group relative">
-                <label htmlFor="password" className="form-label">
-                  Password
+                <label htmlFor="OrganizationPassword" className="form-label">
+                  Unique identification code
                 </label>
                 <input
                   type="password"
-                  id="password"
-                  autoComplete="true"
+                  id="OrganizationPassword"
                   className="form-input pr-9"
                 />
                 <span
-                  onClick={togglePasswordVisibility}
+                  onClick={toggleWorkIDVisibility}
                   className="absolute right-3 translate-y-[88%]  top-1/2 cursor-pointer"
                 >
-                  {showPassword ? (
+                  {showWorkID ? (
                     <Eye className="w-4 h-4" />
                   ) : (
                     <EyeOff className="w-4 h-4" />
@@ -132,7 +110,7 @@ const Signup = () => {
               type="submit"
               className="sm:text-lg text-base  mx-auto  mobile-l:py-7 py-6 mt-6 w-full text-white"
             >
-              Sign Up
+              Sign up
             </Button>
             <div className="py-6 flex items-center  gap-x-4 w-full">
               <span className="w-full h-[.1rem] inline-block bg-slate-100"></span>
@@ -154,8 +132,8 @@ const Signup = () => {
           </form>
 
           <h4 className="sm:text-lg text-base text-center sm:py-8 py-3">
-            <span className="text-black/95"> Have an account? </span>
-            <Link href={"/Signin"} className="text-primary">
+            <span className="text-black/95"> have an account? </span>
+            <Link href={"/groupLogin"} className="text-primary">
               Login
             </Link>
           </h4>
@@ -164,5 +142,4 @@ const Signup = () => {
     </main>
   );
 };
-
-export default Signup;
+export default GroupSignUp;
