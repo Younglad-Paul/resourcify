@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-
 import Link from "next/link";
 import Container from "../components/ui/Container";
 import FormHeader from "../components/headers/FormHeader";
@@ -54,7 +53,7 @@ const Signup = () => {
             className="max-w-[529px] w-full mx-auto rounded bg-white py-5 sm:px-14 px-3 mt-8"
           >
             <div className="text-center">
-              <h1 className=" text-2xl font-semibold">Sign up</h1>
+              <h1 className="text-2xl font-semibold">Sign up</h1>
               <h3 className="text-gray-600 text-[0.9375rem] mt-1.5">
                 Get started today
               </h3>
@@ -90,27 +89,37 @@ const Signup = () => {
                 <input
                   type="name"
                   id="email"
-                  placeholder="enter your  email"
+                  placeholder="enter your email"
                   className="form-input"
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="WorkId" className="form-label">
-                  Work Id
-                </label>
-                <input
-                  type="name"
-                  id="WorkId"
-                  placeholder="enter work Id"
-                  className="form-input"
-                />
-              </div>
+              <div className="form-group relative">
+              <label htmlFor="workID" className="form-label">
+                Work ID
+              </label>
+              <input
+                type={showWorkID ? "text" : "password"}
+                id="workID"
+                placeholder="enter work ID"
+                className="form-input"
+              />
+              <span
+                onClick={toggleWorkIDVisibility}
+                className="absolute right-3 translate-y-[88%]  top-1/2 cursor-pointer"
+              >
+                {showWorkID ? (
+                  <EyeOff className="w-4 h-4" />
+                ) : (
+                  <Eye className="w-4 h-4" />
+                )}
+              </span>
+            </div>
               <div className="form-group relative">
                 <label htmlFor="password" className="form-label">
                   Password
                 </label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   autoComplete="true"
                   className="form-input pr-9"
@@ -120,9 +129,9 @@ const Signup = () => {
                   className="absolute right-3 translate-y-[88%]  top-1/2 cursor-pointer"
                 >
                   {showPassword ? (
-                    <Eye className="w-4 h-4" />
-                  ) : (
                     <EyeOff className="w-4 h-4" />
+                  ) : (
+                    <Eye className="w-4 h-4" />
                   )}
                 </span>
               </div>

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-
 import Link from "next/link";
 import FormHeader from "../components/headers/FormHeader";
 import Container from "../components/ui/Container";
@@ -17,7 +16,7 @@ const Signin = () => {
   const [showWorkID, setShowWorkID] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -33,7 +32,7 @@ const Signin = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
   };
@@ -52,7 +51,7 @@ const Signin = () => {
             className="max-w-[529px] w-full mx-auto rounded bg-white py-5 sm:px-14 px-3 mt-8"
           >
             <div className="text-center">
-              <h1 className=" text-2xl font-semibold">Sign in</h1>
+              <h1 className="text-2xl font-semibold">Sign in</h1>
               <h3 className="text-gray-600 text-[0.9375rem] mt-1.5">
                 Welcome back and good to see you.
               </h3>
@@ -75,7 +74,7 @@ const Signin = () => {
                   Password
                 </label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   className="form-input pr-9"
                 />
@@ -84,9 +83,9 @@ const Signin = () => {
                   className="absolute right-3 translate-y-[88%]  top-1/2 cursor-pointer"
                 >
                   {showPassword ? (
-                    <Eye className="w-4 h-4" />
-                  ) : (
                     <EyeOff className="w-4 h-4" />
+                  ) : (
+                    <Eye className="w-4 h-4" />
                   )}
                 </span>
               </div>

@@ -17,7 +17,6 @@ const FormHeader = ({ label }: Label) => {
           className="md:w-[9.1rem] w-[7rem]"
         />
       </Link>
-
       <h1 className="md:text-[2.5rem] sm:text-[1.7rem] capitalize text-[1.1rem] text-primary ">
         {label}
       </h1>
