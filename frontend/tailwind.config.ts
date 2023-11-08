@@ -6,11 +6,13 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
     extend: {
       colors: {
-        "primary-blue": "#2E68FB",
+        "primary-blue": "#00205B",
       },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

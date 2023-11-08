@@ -19,7 +19,7 @@ const Offer = () => {
       ref={ref}
       id="features"
       style={{ backgroundImage: "url(./images/tan1.png)" }}
-      className="bg-[#2E68FB17] pt-16 pb-[13rem] scroll-mt-24 bg-bottom lg:bg-[length:1000px_150px] mobile-l:bg-[length:470px_130px] bg-[length:250px_100px] bg-no-repeat sm:px-14 px-10"
+      className="bg-lightBlue pt-16 pb-[13rem] scroll-mt-24 bg-bottom lg:bg-[length:1000px_150px] mobile-l:bg-[length:470px_130px] bg-[length:250px_100px] bg-no-repeat sm:px-14 px-10"
     >
       <Container>
         <h1 className="text-center primary-heading">

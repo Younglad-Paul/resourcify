@@ -8,6 +8,7 @@ import img2 from "../../../../public/images/hero2.png";
 import img3 from "../../../../public/images/hero3.png";
 import Container from "../ui/Container";
 import { useSectionInView } from "@/lib/hooks";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const { ref } = useSectionInView("Home");
@@ -29,7 +30,12 @@ const Hero = () => {
           </svg>
         </div>
 
-        <div className="space-y-9 md:w-[43rem]">
+        <motion.div
+          initial={{ y: 70, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ stiffness: 70, ease: "easeIn", type: "spring" }}
+          className="space-y-9 md:w-[43rem]"
+        >
           <h1 className="primary-heading">
             Simplify Your Reimbursement Process with our Streamlined Solution
           </h1>
@@ -47,7 +53,7 @@ const Hero = () => {
               join us today
             </Link>
           </Button>
-        </div>
+        </motion.div>
 
         <div className="flex relative z-10  md:w-[40rem] lg:h-[43rem]   ">
           <figure className="lg:absolute left-0 z-10 shadow-2xl shadow-black/50 xl:w-auto lg:w-[18rem]  w-full lg:h-auto mobile-l:h-[20rem] ">

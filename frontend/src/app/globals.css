@@ -93,7 +93,21 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  .asidebar::-webkit-scrollbar {
+    @apply w-0;
+  }
+
+  .asidebar::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-tr-lg rounded-br-lg h-0;
+    height: 40px;
+  }
+  .asidebar::-webkit-scrollbar-track {
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
   }
 }

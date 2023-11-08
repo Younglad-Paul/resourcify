@@ -6,10 +6,9 @@ import ActiveSectionProvider from "@/context/activeSection";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Resourcify',
-  description: 'Empowering Financial Efficiency and Employee Satisfaction',
-}
-
+  title: "Resourcify",
+  description: "Empowering Financial Efficiency and Employee Satisfaction",
+};
 
 export default function RootLayout({
   children,
@@ -17,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       <body className={inter.className}>
         <ActiveSectionProvider>{children}</ActiveSectionProvider>
       </body>

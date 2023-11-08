@@ -1,6 +1,6 @@
-import { navLinks } from "@/lib/Links";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { navLinks } from "@/lib/Links";
 
 type Props = {
   isMenuOpen: boolean;
