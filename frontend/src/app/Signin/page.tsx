@@ -5,6 +5,7 @@ import FormHeader from "../components/headers/FormHeader";
 import Container from "../components/ui/Container";
 import { EyeOff, Eye, Mail } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { FcGoogle } from "react-icons/fc";
 
 const Signin = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const Signin = () => {
   const [showWorkID, setShowWorkID] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -32,7 +33,7 @@ const Signin = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
   };
@@ -111,7 +112,7 @@ const Signin = () => {
                 href={"#"}
                 className="flex gap-x-6 items-center sm:text-lg text-sm"
               >
-                <Mail /> <span>Sign up with Mail</span>
+                <FcGoogle /> <span>Sign up with Google</span>
               </Link>
             </button>
           </form>

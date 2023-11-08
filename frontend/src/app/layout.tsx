@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ActiveSectionProvider from "@/context/activeSection";
+import { Providers } from "@/provider/Provider";
+import { Toaster } from "./components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       <body className={inter.className}>
-        <ActiveSectionProvider>{children}</ActiveSectionProvider>
+        <Providers>
+          <Toaster />
+          <ActiveSectionProvider>{children}</ActiveSectionProvider>
+        </Providers>
       </body>
     </html>
   );

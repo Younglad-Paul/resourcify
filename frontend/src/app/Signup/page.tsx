@@ -5,6 +5,7 @@ import Container from "../components/ui/Container";
 import FormHeader from "../components/headers/FormHeader";
 import { Eye, EyeOff, Mail } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { FcGoogle } from "react-icons/fc";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -94,26 +95,26 @@ const Signup = () => {
                 />
               </div>
               <div className="form-group relative">
-              <label htmlFor="workID" className="form-label">
-                Work ID
-              </label>
-              <input
-                type={showWorkID ? "text" : "password"}
-                id="workID"
-                placeholder="enter work ID"
-                className="form-input"
-              />
-              <span
-                onClick={toggleWorkIDVisibility}
-                className="absolute right-3 translate-y-[88%]  top-1/2 cursor-pointer"
-              >
-                {showWorkID ? (
-                  <EyeOff className="w-4 h-4" />
-                ) : (
-                  <Eye className="w-4 h-4" />
-                )}
-              </span>
-            </div>
+                <label htmlFor="workID" className="form-label">
+                  Work ID
+                </label>
+                <input
+                  type={showWorkID ? "text" : "password"}
+                  id="workID"
+                  placeholder="enter work ID"
+                  className="form-input"
+                />
+                <span
+                  onClick={toggleWorkIDVisibility}
+                  className="absolute right-3 translate-y-[88%]  top-1/2 cursor-pointer"
+                >
+                  {showWorkID ? (
+                    <EyeOff className="w-4 h-4" />
+                  ) : (
+                    <Eye className="w-4 h-4" />
+                  )}
+                </span>
+              </div>
               <div className="form-group relative">
                 <label htmlFor="password" className="form-label">
                   Password
@@ -157,7 +158,7 @@ const Signup = () => {
                 href={"#"}
                 className="flex gap-x-6 items-center sm:text-lg text-sm"
               >
-                <Mail /> <span>Sign up with Mail</span>
+                <FcGoogle /> <span>Sign up with Google</span>
               </Link>
             </button>
           </form>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Container from "../components/ui/Container";
 import DashboardSidebar from "../components/sidebar/DashboardSidebar";
 import DashboardHeader from "../components/headers/DashboardHeader";
 import ContainerDashboard from "../components/ui/ContainerDashboard";

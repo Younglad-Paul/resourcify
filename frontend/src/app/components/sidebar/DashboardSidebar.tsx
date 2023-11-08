@@ -18,10 +18,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { useState } from "react";
+import SignoutSideBar from "./SignoutSideBar";
 
 const DashboardSidebar = () => {
   const pathname = usePathname();
-  const [IsOpen, setIsOpen] = useState(true);
+  const [IsOpen, setIsOpen] = useState<boolean>(true);
 
   return (
     <aside
@@ -31,7 +32,7 @@ const DashboardSidebar = () => {
     >
       <span
         onClick={() => setIsOpen(!IsOpen)}
-        className="absolute lg:block hidden cursor-pointer bg-primary w-7 h-7 shadow-xl shadow-black/50 grid place-items-center rounded-full right-2  bottom-16  z-20"
+        className="absolute lg:grid hidden  cursor-pointer bg-primary w-7 h-7 shadow-xl shadow-black/50  place-items-center rounded-full right-2  bottom-16  z-20"
       >
         <ChevronRight
           className={`text-white transition duration-150 ${
@@ -95,8 +96,8 @@ const DashboardSidebar = () => {
                 >
                   <span>{link.icon}</span>
                   <span
-                    className={`capitalize min-w-[10rem] lg:block hidden  ${
-                      !IsOpen && "hidden"
+                    className={`capitalize min-w-[10rem] max-lg:hidden    ${
+                      !IsOpen && "  hidden "
                     }`}
                   >
                     {link.label}{" "}
@@ -125,7 +126,7 @@ const DashboardSidebar = () => {
                   <Settings className="w-5 h-5" />
                 </span>
                 <span
-                  className={`capitalize min-w-[10rem] lg:block hidden ${
+                  className={`capitalize min-w-[10rem] max-lg:hidden  ${
                     !IsOpen && "hidden"
                   }`}
                 >
@@ -152,22 +153,13 @@ const DashboardSidebar = () => {
       </nav>
 
       <ul className="mt-7 ">
-        <li className="flex gap-x-8  overflow-hidden  hover:text-primary px-11 items-center text-primary-darkBlue font-medium  cursor-pointer py-3">
-          <span>
-            <LogOut className="w-5 h-5" />
-          </span>
-          <span
-            className={`lg:block hidden min-w-[10rem] ${!IsOpen && "hidden"}`}
-          >
-            Sign Out
-          </span>
-        </li>
+        <SignoutSideBar isOpen={IsOpen} />
         <li className="flex  hover:text-primary gap-x-8 px-11 items-center text-primary-darkBlue font-medium  cursor-pointer py-3">
           <span>
             <HelpCircle className="w-5 h-5" />
           </span>
           <span
-            className={`min-w-[10rem] lg:block hidden   ${!IsOpen && "hidden"}`}
+            className={`min-w-[10rem] max-lg:hidden  ${!IsOpen && "hidden"}`}
           >
             Help
           </span>

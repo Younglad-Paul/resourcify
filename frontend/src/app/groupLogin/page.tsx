@@ -6,6 +6,7 @@ import { Button } from "../components/ui/button";
 import Container from "../components/ui/Container";
 import FormHeader from "../components/headers/FormHeader";
 import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
 
 const GroupSignIn = () => {
   const [showWorkID, setShowWorkID] = useState(false);
@@ -103,7 +104,7 @@ const GroupSignIn = () => {
                 href={"#"}
                 className="flex gap-x-6 items-center sm:text-lg text-sm"
               >
-                <Mail /> <span>Sign up with Mail</span>
+                <FcGoogle /> <span>Sign up with Google</span>
               </Link>
             </button>
           </form>

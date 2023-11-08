@@ -4,8 +4,10 @@ import React, { FormEvent, useState } from "react";
 import Link from "next/link";
 import Container from "../components/ui/Container";
 import FormHeader from "../components/headers/FormHeader";
-import { EyeOff, Mail, Eye } from "lucide-react";
+import { EyeOff, Eye } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { FcGoogle } from "react-icons/fc";
+import SignInButton from "../components/SignInButton";
 
 const GroupSignUp = () => {
   const [showWorkID, setShowWorkID] = useState(false);
@@ -118,17 +120,7 @@ const GroupSignUp = () => {
               <span className="w-full h-[.1rem] inline-block bg-slate-100"></span>
             </div>
 
-            <button
-              type="button"
-              className="bg-[#2E68FB17] hover:shadow-xl transition-shadow duration-300 text-center grid place-items-center mx-auto py-3 px-5 text-black/90 rounded-md"
-            >
-              <Link
-                href={"#"}
-                className="flex gap-x-6 items-center sm:text-lg text-sm"
-              >
-                <Mail /> <span>Sign up with Mail</span>
-              </Link>
-            </button>
+            <SignInButton />
           </form>
 
           <h4 className="sm:text-lg text-base text-center sm:py-8 py-3">
