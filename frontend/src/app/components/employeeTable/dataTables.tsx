@@ -5,8 +5,6 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
-  ColumnFiltersState,
-  getFilteredRowModel,
 } from "@tanstack/react-table";
 
 import {
@@ -17,51 +15,33 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { useState } from "react";
-import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
 
-const DataTable = <TData, TValue>({
+export function DataTable<TData, TValue>({
   columns,
   data,
-}: DataTableProps<TData, TValue>) => {
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-
+}: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    onColumnFiltersChange: setColumnFilters,
-    getFilteredRowModel: getFilteredRowModel(),
-    state: {
-      columnFilters,
-    },
   });
 
   return (
-    <div className="rounded-lg bg-white p-5 ">
-      <div className="">
-        <h1 className="font-semibold ">Transactions</h1>
+    <div className="rounded-lg p-6  bg-white">
+      <h1 className="text-primary-darkBlue font-medium">Recent Request</h1>
+
+      <div className="flex items-center gap-x-5 mt-5">
+        <h1 className="text-sm text-gray-700">Showing 4 from 12 result</h1>
+        <Button className="">Show All</Button>
       </div>
 
-      <div className="">
-        <div className="flex items-center py-4">
-          <Input
-            placeholder="Filter name..."
-            value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-            onChange={(event) =>
-              table.getColumn("name")?.setFilterValue(event.target.value)
-            }
-            className="max-w-sm"
-          />
-        </div>
-      </div>
-
-      <Table>
+      <Table className="mt-12">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
@@ -105,5 +85,4 @@ const DataTable = <TData, TValue>({
       </Table>
     </div>
   );
-};
-export default DataTable;
+}

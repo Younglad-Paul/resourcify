@@ -11,12 +11,12 @@ const SignoutSideBar = ({ isOpen }: Prop) => {
   const { data: session } = useSession();
   const { toast } = useToast();
 
-  if (!session?.user) {
-    toast({
-      description: "Logged Out",
-    });
-    redirect("/");
-  }
+  // if (!session?.user) {
+  //   toast({
+  //     description: "Logged Out",
+  //   });
+  //   redirect("/");
+  // }
 
   return (
     <li

@@ -1,8 +1,13 @@
-import { Bell, HelpCircle, Search, Store } from "lucide-react";
+"use client";
+
+import { AlignJustify, Bell, HelpCircle, Search, Store } from "lucide-react";
 import Time from "../Time";
 import ProfileButton from "../profileBtn/ProfileBtn";
+import { Button } from "../ui/button";
+import { useAppContext } from "@/context/AppContext";
 
 const DashboardHeader = () => {
+  const { toggleSidebar } = useAppContext();
   return (
     <header className="flex z-10 justify-between items-center sticky top-0 py-4 px-6 bg-white">
       <div className="">
@@ -12,7 +17,7 @@ const DashboardHeader = () => {
         <Time />
       </div>
 
-      <div className="flex items-center gap-x-10">
+      <div className="sm:flex hidden items-center gap-x-10 ">
         <div className="relative xl:block hidden">
           <input
             type="text"
@@ -22,9 +27,6 @@ const DashboardHeader = () => {
           <Search className="absolute right-5 top-1/2 w-5 text-gray-500 h-5 -translate-y-1/2" />
         </div>
 
-        <div className="bg-primary rounded-lg text-white py-2.5 px-3 text-[0.725rem]">
-          $ 2345.00
-        </div>
         <div className="bg-primary-darkBlue flex items-center gap-x-2 rounded-lg text-white py-2.5 px-3">
           <span>
             <Store className="w-4 h-4" />
@@ -42,6 +44,15 @@ const DashboardHeader = () => {
         </div>
         <ProfileButton />
       </div>
+
+      <Button
+        type="button"
+        onClick={toggleSidebar}
+        variant={"ghost"}
+        className="sm:hidden flex"
+      >
+        <AlignJustify />
+      </Button>
     </header>
   );
 };

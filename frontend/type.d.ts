@@ -18,3 +18,7 @@ type Transactions = {
   transactions: number;
   date: string;
 };
+
+type ApiErrorResponse = {
+  msg: string;
+};

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { employeeLinks } from "@/lib/Links";
+import { adminLinks } from "@/lib/Links";
 import { ChevronRight, HelpCircle, Store } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,13 +11,13 @@ import SignoutSideBar from "./SignoutSideBar";
 import Logo from "../../../../public/images/logo.png";
 import Image from "next/image";
 
-const DashboardSidebar = () => {
+const AdminSidebar = () => {
   const pathname = usePathname();
   const [IsOpen, setIsOpen] = useState<boolean>(true);
 
   return (
     <aside
-      className={`asidebar sm:block hidden    transition-all duration-300  z-20 sticky overflow-y-scroll  overflow-x-hidden   h-screen   left-0 top-0 ${
+      className={`asidebar  sm:block hidden   transition-all duration-300  z-20 sticky overflow-y-scroll  overflow-x-hidden   h-screen   left-0 top-0 ${
         IsOpen ? " lg:w-[18rem] w-[8rem]" : "w-[8rem]"
       }`}
     >
@@ -66,7 +66,7 @@ const DashboardSidebar = () => {
 
       <nav className="">
         <ul className="mt-20 ">
-          {employeeLinks.map((link, i) => {
+          {adminLinks.map((link, i) => {
             const active = pathname === link.path;
 
             return (
@@ -121,4 +121,4 @@ const DashboardSidebar = () => {
     </aside>
   );
 };
-export default DashboardSidebar;
+export default AdminSidebar;

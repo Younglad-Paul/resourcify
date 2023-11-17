@@ -1,4 +1,10 @@
-import { ArrowRightLeft, Goal, LayoutPanelLeft, Store } from "lucide-react";
+import {
+  ArrowRightLeft,
+  Goal,
+  LayoutPanelLeft,
+  Store,
+  Users2,
+} from "lucide-react";
 
 export const navLinks = [
   {
@@ -15,10 +21,10 @@ export const navLinks = [
   },
 ] as const;
 
-export const dashboardLinks = [
+export const employeeLinks = [
   {
     icon: <LayoutPanelLeft className="w-5 h-5" />,
-    path: "/dashboards",
+    path: "/employeeDashboard",
     label: "dashboard",
   },
   {
@@ -28,12 +34,30 @@ export const dashboardLinks = [
   },
   {
     icon: <ArrowRightLeft className="w-5 h-5" />,
-    path: "/dashboards/transactions",
+    path: "/employeeDashboard/transactions",
     label: "transactions",
   },
+];
+export const adminLinks = [
   {
-    icon: <Goal className="w-5 h-5" />,
-    path: "/dashboards/goals",
-    label: "set goals",
+    icon: <LayoutPanelLeft className="w-5 h-5" />,
+    path: "/dashboard",
+    label: "dashboard",
+  },
+  {
+    icon: <Store className="w-5 h-5" />,
+    path: "/dashboard/bankAccounts",
+    label: "bank accounts",
+  },
+  {
+    icon: <ArrowRightLeft className="w-5 h-5" />,
+    path: "/dashboard/transactions",
+    label: "transactions",
+  },
+
+  {
+    icon: <Users2 className="w-5 h-5" />,
+    path: "/dashboard/Employees",
+    label: "employees",
   },
 ];

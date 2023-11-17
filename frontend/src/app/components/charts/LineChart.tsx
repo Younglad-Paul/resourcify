@@ -1,8 +1,12 @@
 "use client";
 import { Chart } from "react-google-charts";
 
+interface Data {
+  data: Array<Array<string | number>>;
+}
+
 const data = [
-  ["x", "", ""],
+  ["x", "Sales", "Expenses"],
   ["Jan", 0, 10],
   ["Feb", 10, 5],
   ["Mar", 23, 15],
@@ -17,16 +21,24 @@ const data = [
 ];
 
 const options = {
-  series: {
-    0: { curveType: "function" },
-    1: { curveType: "function" },
-  },
+  title: "Income",
+  curveType: "function",
+  legend: { position: "bottom" },
 };
 
 const LineChart = () => {
   return (
-    <div className=" ">
-      <Chart />
+    <div className="lg:grid lg:grid-cols-1  mx-auto max-w-screen-lg">
+      <div className="lg:col-span-2 xl:col-span-1  ">
+        <Chart
+          chartType="LineChart"
+          width={"100%"}
+          height={"300px"}
+          loader={<div>Loading Chart</div>}
+          data={data}
+          options={options}
+        />
+      </div>
     </div>
   );
 };

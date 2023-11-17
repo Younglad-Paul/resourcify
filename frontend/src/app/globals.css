@@ -65,7 +65,7 @@
   }
 
   .form-input {
-    @apply p-2.5 border text-[#052126] outline-0 rounded placeholder:sm:text-lg placeholder:text-sm;
+    @apply border text-[#052126] outline-0 rounded placeholder:sm:text-lg placeholder:text-sm;
   }
 
   .custom-shape-divider-top-1698835758 {

@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       <body className={inter.className}>
+        <Toaster />
         <Providers>
-          <Toaster />
           <ActiveSectionProvider>{children}</ActiveSectionProvider>
         </Providers>
       </body>
