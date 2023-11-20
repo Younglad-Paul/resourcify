@@ -2,7 +2,7 @@
 
 import { AlignJustify, Bell, HelpCircle, Search, Store } from "lucide-react";
 import Time from "../Time";
-import ProfileButton from "../profileBtn/ProfileBtn";
+import ProfileButton from "../profileBtn/AdminProfileBtn";
 import { Button } from "../ui/button";
 import { useAppContext } from "@/context/AppContext";
 
