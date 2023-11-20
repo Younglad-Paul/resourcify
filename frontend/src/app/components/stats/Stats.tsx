@@ -7,6 +7,7 @@ import {
   MoreVertical,
   Eye,
   MoveDown,
+  Plus
 } from "lucide-react";
 import StatsCard from "./StatsCard";
 
@@ -33,8 +34,8 @@ import StatsCard from "./StatsCard";
 
 const Stats = () => {
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] gap-x-4 gap-y-3">
-      <article className={`px-4 py-3 rounded-lg border bg-[#00205B]`}>
+    <div className="grid grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] gap-x-32 gap-y-3">
+      <article className='w-[20rem] px-4 py-3 rounded-lg border bg-[#00205B] '>
         <div className="flex items-start justify-between">
           <div className="">
             <CircleDollarSign className="w-9 h-9 text-gray-100" />
@@ -56,8 +57,9 @@ const Stats = () => {
         </div>
       </article>
 
+<div className="grid grid-cols-[repeat(auto-fit,_minmax(10rem,_1fr))] w-[20rem] sm:w-[53rem] sm:ml-[-20.5rem]">
       <article
-        className={`px-4 py-3 rounded-lg border border-[rgba(223, 28, 28, 0.19)] bg-[#FFEBEB]`}
+        className={`w-[9.5rem] sm:w-[20rem]  px-4 py-3 text-[.8rem] sm:text-[1rem] rounded-lg border border-[rgba(223, 28, 28, 0.19)] bg-[#FFEBEB]`}
       >
         <div className="flex items-start justify-between">
           <div className="">
@@ -74,7 +76,7 @@ const Stats = () => {
 
         <div className="flex justify-between place-items-center mt-5">
           <h4 className="text-gray-800 text-[1rem] font-semibold">
-            N 11,432.00
+            N11,432
           </h4>
 
           <div className="flex items-center gap-x-2">
@@ -87,7 +89,7 @@ const Stats = () => {
       </article>
 
       <article
-        className={`px-4 py-3 rounded-lg border border-[#24BB0D30] bg-[#EAF9E8]`}
+        className={`w-[9.5rem] sm:w-[20rem] ml-0 sm:ml-12 px-4 py-3 text-[.8rem] sm:text-[1rem] rounded-lg border border-[#24BB0D30] bg-[#EAF9E8]`}
       >
         <div className="flex items-start justify-between">
           <div className="">
@@ -115,6 +117,21 @@ const Stats = () => {
           </div>
         </div>
       </article>
+      
+      <article>
+      <div className='w-[10rem] h-[3rem] sm:ml-24 mt-4  px-4 py-3 rounded-lg border bg-[#00205B] cursor-pointer '>
+        <div className="flex items-start justify-between">
+          <div className="flex justify-center content-center">
+            <Plus className="w-6 h-6 text-gray-100" />
+            <h3 className="capitalize text-gray-100 font-medium">
+              Add Card
+            </h3>
+          </div>
+        </div>
+      </div>
+      </article>
+      </div>
+
     </div>
   );
 };

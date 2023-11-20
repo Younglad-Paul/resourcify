@@ -45,7 +45,7 @@ async function getData(): Promise<Request[]> {
 const Table = async () => {
   const data = await getData();
   return (
-    <div>
+    <div >
       <DataTable columns={columns} data={data} />
     </div>
   );

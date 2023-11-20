@@ -23,7 +23,7 @@ const SidebarAdminMobile = () => {
       ></div>
       <aside
         className={`transition-all duration-300 sm:hidden block fixed overflow-y-scroll 
-       overflow-x-hidden    h-screen left-0 top-0 bg-white z-20
+       overflow-x-hidden    h-screen left-0 top-0 bg-white z-[9999]
        ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
       `}
       >

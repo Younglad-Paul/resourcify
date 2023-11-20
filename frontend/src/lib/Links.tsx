@@ -61,3 +61,38 @@ export const adminLinks = [
     label: "employees",
   },
 ];
+
+export const transHisNavLinks = [
+  {
+    path: "/dashboard/transactions",
+    label: "History",
+  },
+  {
+    path: "/dashboard/transactions/adminForms",
+    label: "Wallet Funding",
+  },
+  {
+    path: "",
+    label: "Wallet Withdrawal",
+  },
+
+  {
+    path: "",
+    label: "Reimbursement Dispersal",
+  },
+];
+
+export const employeeNavLinks = [
+  {
+    path: "/dashboard/Employees",
+    label: "Employees",
+  },
+  {
+    path: "/dashboard/Employees/AdminEmployeeRequest",
+    label: "Requests",
+  },
+  {
+    path: "/dashboard/Employees/AdminReimbursement",
+    label: "Reimbursement",
+  },
+];

@@ -111,7 +111,7 @@ const SignUpForm = () => {
         </div>
         <div className="form-group relative">
           <label htmlFor="organizationCode" className="form-label">
-            organizationCode
+            Organization Code
           </label>
           <Input
             type={organizationId ? "text" : "password"}
