@@ -113,7 +113,7 @@ const Stats = () => {
             <span className="grid place-items-center w-5 h-5 bg-[#DF1C1C6E] rounded-full">
               <MoveDown className="w-3 h-3 text-[#DF1C1C]" />
             </span>
-            <span className="text-sm">12.7%</span>
+            <span className="text-sm">12.9%</span>
           </div>
         </div>
       </article>
