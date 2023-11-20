@@ -11,6 +11,8 @@ import { AxiosError } from "axios";
 import { customFetch } from "@/lib/utils";
 import { useToast } from "../ui/use-toast";
 import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/redux/store";
+import { getuserToken } from "@/redux/features/userEmployee/UserSlice";
 
 const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,6 +24,7 @@ const SignInForm = () => {
 
   const { toast } = useToast();
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   const FormSignInSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,7 +37,8 @@ const SignInForm = () => {
         title: "Logged in  successfully",
       });
       router.push("/employeeDashboard");
-      // console.log(response.data);
+      dispatch(getuserToken(response.data.access_token));
+
       return response.data;
     } catch (error) {
       const errorMessage = error as AxiosError<ApiErrorResponse>;

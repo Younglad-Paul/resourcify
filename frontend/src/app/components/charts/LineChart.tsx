@@ -14,7 +14,7 @@ const data = [
   ["May", 18, 10],
   ["Jun", 9, 5],
   ["Jul", 11, 3],
-  ["Sept", 27, 49],
+  ["Sept", 27, 19],
   ["Oct", 27, 19],
   ["Nov", 27, 19],
   ["Dec", 19, 27],
@@ -28,14 +28,13 @@ const options = {
 
 const LineChart = () => {
   return (
-    <div className="">
-      <div className="">
+    <div className="lg:grid lg:grid-cols-1  mx-auto max-w-screen-lg">
+      <div className="lg:col-span-2 xl:col-span-1  ">
         <Chart
-        className=""
           chartType="LineChart"
           width={"100%"}
           height={"300px"}
-          loader={<div>Loading Chart...</div>}
+          loader={<div>Loading Chart</div>}
           data={data}
           options={options}
         />

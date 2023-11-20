@@ -8,6 +8,7 @@ import {
 } from "../ui/dropdown-menu";
 
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import Link from "next/link";
 
 const ProfileButton = () => {
   return (
@@ -22,7 +23,9 @@ const ProfileButton = () => {
       <DropdownMenuContent className="mr-6">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="cursor-pointer">Profile</DropdownMenuItem>
+        <DropdownMenuItem asChild className="cursor-pointer">
+          <Link href={"/employeeDashboard/profile"}>Profile</Link>
+        </DropdownMenuItem>{" "}
         <DropdownMenuItem className="cursor-pointer">Billing</DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer">
           Subscription
