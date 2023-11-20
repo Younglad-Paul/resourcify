@@ -1,11 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { Request, AdminEmployeeRequestData } from "@/app/components/employeeTable/columns";
+import { Request3, AdminEmployeeRequestData } from "@/app/components/employeeTable/columns";
 import { AdminDataTable } from "@/app/components/employeeTable/AdminDataTable";
 import { X } from "lucide-react";
 
 const Page = () => {
-  const [data, setData] = useState<Request[]>([]);
+  const [data, setData] = useState<Request3[]>([]);
 
   const fetchData = async () => {
     const rawData = [
@@ -14,50 +14,50 @@ const Page = () => {
           description: "Funding",
           date: "19/11/2023",
           amount: "N23,000",
-          approve: "Approved",
+          approve: "Approved" as const,
         },
-        {
-            title: "School Funding",
-            description: "Funding",
-            date: "19/11/2023",
-            amount: "N23,000",
-            approve: "Approved",
-          },
-          {
-          title: "School Funding",
-          description: "Funding",
-          date: "19/11/2023",
-          amount: "N23,000",
-          approve: "Declined",
-        },
-        {
-          title: "School Funding",
-          description: "Funding",
-          date: "19/11/2023",
-          amount: "N23,000",
-          approve: "Approved",
-        },
-        {
-            title: "School Funding",
-            description: "Funding",
-            date: "19/11/2023",
-            amount: "N23,000",
-            approve: "Approved",
-          },
-          {
-            title: "School Funding",
-            description: "Funding",
-            date: "19/11/2023",
-            amount: "N23,000",
-            approve: "Pending",
-          },
-          {
-            title: "School Funding",
-            description: "Funding",
-            date: "19/11/2023",
-            amount: "N23,000",
-            approve: "Approved",
-          },
+        // {
+        //     title: "School Funding",
+        //     description: "Funding",
+        //     date: "19/11/2023",
+        //     amount: "N23,000",
+        //     approve: "Approved",
+        //   },
+        //   {
+        //   title: "School Funding",
+        //   description: "Funding",
+        //   date: "19/11/2023",
+        //   amount: "N23,000",
+        //   approve: "Declined",
+        // },
+        // {
+        //   title: "School Funding",
+        //   description: "Funding",
+        //   date: "19/11/2023",
+        //   amount: "N23,000",
+        //   approve: "Approved",
+        // },
+        // {
+        //     title: "School Funding",
+        //     description: "Funding",
+        //     date: "19/11/2023",
+        //     amount: "N23,000",
+        //     approve: "Approved",
+        //   },
+        //   {
+        //     title: "School Funding",
+        //     description: "Funding",
+        //     date: "19/11/2023",
+        //     amount: "N23,000",
+        //     approve: "Pending",
+        //   },
+        //   {
+        //     title: "School Funding",
+        //     description: "Funding",
+        //     date: "19/11/2023",
+        //     amount: "N23,000",
+        //     approve: "Approved",
+        //   },
       ];
     
     const dataWithNumber = rawData.map((item, index) => ({

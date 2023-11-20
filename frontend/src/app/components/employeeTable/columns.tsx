@@ -48,8 +48,15 @@ export const columns: ColumnDef<Request>[] = [
   },
 ];
 
+export type Request1 = {
+  number: number;
+  title: string;
+  date: string;
+  amount: number;
+  status: "Approved" | "Pending" | "Declined";
+};
 
-export const AdminColumns: ColumnDef<Request>[] = [
+export const AdminColumns: ColumnDef<Request1>[] = [
   {
     accessorKey: "number",
     header: "N/A",
@@ -87,7 +94,14 @@ export const AdminColumns: ColumnDef<Request>[] = [
   },
 ];
 
-export const AdminEmployeeDataColumns: ColumnDef<Request>[] = [
+export type Request2 = {
+  number: number;
+  id: string;
+  role: string;
+  lastLog: string;
+  status: "Approved" | "Pending" | "Declined";
+};
+export const AdminEmployeeDataColumns: ColumnDef<Request2>[] = [
   {
     accessorKey: "number",
     header: "N/A",
@@ -125,7 +139,16 @@ export const AdminEmployeeDataColumns: ColumnDef<Request>[] = [
   },
 ];
 
-export const AdminEmployeeRequestData: ColumnDef<Request>[] = [
+export type Request3 = {
+  number: number;
+  title: string;
+  description: string;
+  date: string;
+  amount: string;
+  approve: "Approved" | "Pending" | "Declined";
+};
+
+export const AdminEmployeeRequestData: ColumnDef<Request3>[] = [
   {
     accessorKey: "number",
     header: "N/A",
@@ -167,7 +190,16 @@ export const AdminEmployeeRequestData: ColumnDef<Request>[] = [
   },
 ];
 
-export const AdminReimbursement: ColumnDef<Request>[] = [
+export type Request4 = {
+  number: number;
+  name: string;
+  title: string;
+  description: string;
+  amount: string; 
+  add: "Approved" | "Pending" | "Declined"; 
+};
+
+export const AdminReimbursement: ColumnDef<Request4>[] = [
   {
     accessorKey: "number",
     header: "N/A",

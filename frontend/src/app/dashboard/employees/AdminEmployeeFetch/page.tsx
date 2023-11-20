@@ -1,62 +1,62 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { Request, AdminEmployeeDataColumns } from "@/app/components/employeeTable/columns";
+import { Request2, AdminEmployeeDataColumns } from "@/app/components/employeeTable/columns";
 import { AdminDataTable } from "@/app/components/employeeTable/AdminDataTable";
 import { X } from "lucide-react";
 
 const Page = () => {
-  const [data, setData] = useState<Request[]>([]);
+  const [data, setData] = useState<Request2[]>([]);
 
   const fetchData = async () => {
     const rawData = [
-        {
-          id: "1234",
-          role: "Employee",
-          lastLog: "Today",
-          status: "Approved",
-        },
-        {
-            id: "1234",
-            role: "Employee",
-            lastLog: "Today",
-            status: "Approved",
-          },
-          {
-            id: "1234",
-            role: "Employee",
-            lastLog: "Today",
-            status: "Approved",
-          },
-          {
-            id: "1234",
-            role: "Employee",
-            lastLog: "Today",
-            status: "Approved",
-          },
-          {
-            id: "1234",
-            role: "Employee",
-            lastLog: "Today",
-            status: "Approved",
-          },
-          {
-            id: "1234",
-            role: "Employee",
-            lastLog: "Today",
-            status: "Approved",
-          },
-          {
-            id: "1234",
-            role: "Employee",
-            lastLog: "Today",
-            status: "Approved",
-          },
-          {
-            id: "1234",
-            role: "Employee",
-            lastLog: "Today",
-            status: "Approved",
-          },
+      {
+        id: "1234",
+        role: "Employee",
+        lastLog: "Today",
+        status: "Approved" as const,
+      },
+        // {
+        //     id: "1234",
+        //     role: "Employee",
+        //     lastLog: "Today",
+        //     status: "Approved",
+        //   },
+        //   {
+        //     id: "1234",
+        //     role: "Employee",
+        //     lastLog: "Today",
+        //     status: "Approved",
+        //   },
+        //   {
+        //     id: "1234",
+        //     role: "Employee",
+        //     lastLog: "Today",
+        //     status: "Approved",
+        //   },
+        //   {
+        //     id: "1234",
+        //     role: "Employee",
+        //     lastLog: "Today",
+        //     status: "Approved",
+        //   },
+        //   {
+        //     id: "1234",
+        //     role: "Employee",
+        //     lastLog: "Today",
+        //     status: "Approved",
+        //   },
+        //   {
+        //     id: "1234",
+        //     role: "Employee",
+        //     lastLog: "Today",
+        //     status: "Approved",
+        //   },
+        //   {
+        //     id: "1234",
+        //     role: "Employee",
+        //     lastLog: "Today",
+        //     status: "Approved",
+        //   },
       ];
     
     const dataWithNumber = rawData.map((item, index) => ({

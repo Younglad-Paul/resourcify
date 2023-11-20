@@ -1,11 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { Request, AdminReimbursement } from "@/app/components/employeeTable/columns";
+import { Request4, AdminReimbursement } from "@/app/components/employeeTable/columns";
 import { AdminDataTable } from "@/app/components/employeeTable/AdminDataTable";
 import { X } from "lucide-react";
 
 const Page = () => {
-  const [data, setData] = useState<Request[]>([]);
+  const [data, setData] = useState<Request4[]>([]);
 
   const fetchData = async () => {
     const rawData = [
@@ -15,36 +15,36 @@ const Page = () => {
           title: "Funding",
           description: "School Funding",
           amount: "N23,000",
-          add: "Approved",
+          add: "Approved" as const,
         },
-        {
-          name: "Sunday Paul",
-          title: "Funding",
-          description: "School Funding",
-          amount: "N23,000",
-          add: "Approved",
-        },
-        {
-          name: "Sunday Paul",
-          title: "Funding",
-          description: "School Funding",
-          amount: "N23,000",
-          add: "Approved",
-        },
-        {
-          name: "Sunday Paul",
-          title: "Funding",
-          description: "School Funding",
-          amount: "N23,000",
-          add: "Approved",
-        },
-        {
-          name: "Sunday Paul",
-          title: "Funding",
-          description: "School Funding",
-          amount: "N23,000",
-          add: "Approved",
-        },
+        // {
+        //   name: "Sunday Paul",
+        //   title: "Funding",
+        //   description: "School Funding",
+        //   amount: "N23,000",
+        //   add: "Approved",
+        // },
+        // {
+        //   name: "Sunday Paul",
+        //   title: "Funding",
+        //   description: "School Funding",
+        //   amount: "N23,000",
+        //   add: "Approved",
+        // },
+        // {
+        //   name: "Sunday Paul",
+        //   title: "Funding",
+        //   description: "School Funding",
+        //   amount: "N23,000",
+        //   add: "Approved",
+        // },
+        // {
+        //   name: "Sunday Paul",
+        //   title: "Funding",
+        //   description: "School Funding",
+        //   amount: "N23,000",
+        //   add: "Approved",
+        // },
       ];
     
     const dataWithNumber = rawData.map((item, index) => ({

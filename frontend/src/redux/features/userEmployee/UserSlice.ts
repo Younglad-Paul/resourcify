@@ -1,8 +1,10 @@
+// UserSlice.ts
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
+import { RootState } from "../../store";
 import { customFetch } from "@/lib/utils";
-import { RootState } from "@/redux/store";
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios, { AxiosError } from "axios";
 
+// Types
 type User = {
   _id: string;
   firstName: string;
@@ -21,13 +23,17 @@ type UserState = {
   isPopUp: boolean;
 };
 
-const getUserFromLocalStore = (): User => {
+const getUserFromLocalStore = (): User | null => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
   const user = localStorage.getItem("userInfo");
-  return user ? JSON.parse(user) || null : null;
+  return user ? JSON.parse(user) : null;
 };
 
 const initialState: UserState = {
-  user: getUserFromLocalStore() || null,
+  user: getUserFromLocalStore(),
   isLoggedIn: false,
   token: "",
   isLoading: false,
@@ -35,20 +41,21 @@ const initialState: UserState = {
 };
 
 export const fetchUser = createAsyncThunk(
-  "user/getUser",
+  "user/fetchUser",
   async (_, { rejectWithValue, getState }) => {
-    const token = (getState() as RootState).userState.token;
+    const token = (getState() as { user: UserState }).user.token;
 
     try {
-      const resp = await customFetch("/employee/me", {
+      const response = await customFetch("/employee/me", {
         headers: {
           authorization: `Bearer ${token}`,
         },
       });
-      return resp.data;
+
+      return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        const apiError = error.response?.data as ApiErrorResponse;
+        const apiError = error.response?.data;
         return rejectWithValue(apiError);
       } else {
         return rejectWithValue({ message: "An error occurred" });
@@ -58,20 +65,21 @@ export const fetchUser = createAsyncThunk(
 );
 
 export const updateUser = createAsyncThunk(
-  "user/getUser",
+  "user/updateUser",
   async (user, { rejectWithValue, getState }) => {
-    const token = (getState() as RootState).userState.token;
+    const token = (getState() as { user: UserState }).user.token;
 
     try {
-      const resp = await customFetch.put("/api/employee/me", user, {
+      const response = await customFetch.put("/api/employee/me", user, {
         headers: {
           authorization: `Bearer ${token}`,
         },
       });
-      return resp.data;
+
+      return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        const apiError = error.response?.data as ApiErrorResponse;
+        const apiError = error.response?.data;
         return rejectWithValue(apiError);
       } else {
         return rejectWithValue({ message: "An error occurred" });
@@ -101,31 +109,23 @@ const userSlice = createSlice({
       })
       .addCase(fetchUser.fulfilled, (state, { payload }) => {
         state.user = payload;
-        console.log(payload);
         localStorage.setItem("userInfo", JSON.stringify(payload));
+        state.isLoading = false;
+        state.isLoggedIn = true;
       })
       .addCase(fetchUser.rejected, (state) => {
         state.isLoading = false;
+      })
+      .addCase(updateUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user = payload;
+      })
+      .addCase(updateUser.rejected, (state) => {
+        state.isLoading = false;
       });
-
-    // .addCase(updateUser.pending, () => {});
-
-    // builder.addCase(updateUser.pending, (state) => {
-    //   // state;
-    // });
-
-    // .addCase(updateUser.pending, (state) => {
-    //   state.isLoading = false;
-    // })
-    // .addCase(updateUser.fulfilled, (state, { payload }) => {
-    //   const user = payload;
-    //   state.isLoading = false;
-    //   state.user = user;
-    //   // getUserFromLocalStore(user);
-    // })
-    // .addCase(updateUser.rejected, (state) => {
-    //   state.isLoading = false;
-    // });
   },
 });
 
